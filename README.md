@@ -48,3 +48,5 @@ https://docs.google.com/document/d/1mOYJlvps9VxQIv48R9l8e6tFeXp6ZkxtJmqx2cDWk5E/
 + You will need the [heroku toolbelt](https://devcenter.heroku.com/articles/heroku-cli).
 + If you have any issues with environmental variables run ```./env_manager```.
 + __Remember__: Changes to JS and CSS don't change must be precompiled run ```rake assets:precompile``` & ```rake assets:clean```
+
++ If you don't have a Heroku account make one! Remind me to add you to the collaborator list.

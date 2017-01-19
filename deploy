@@ -1,0 +1,38 @@
+#!/bin/bash
+#Push the current remote master branch to Heroku for deployment. Returns to Jacob branch
+
+clear
+env -i
+count=`git checkout master 2>&1 >/dev/null | wc -l`
+
+git branch
+echo
+echo "Pulling..."
+env -i 
+git pull origin master
+echo 
+count=`git status | grep -oh "Untracked files:" | wc -l`
+if [ $count -ne 0 ] 
+then
+	echo "Stalled. Master has untracked files."
+	read -p "Continue anyway? [y/n]  " yn
+	case $yn in
+		[Yy]* ) echo "Continuing...";;
+		[Nn]*) exit;;
+		* ) exit;;
+	esac
+fi
+
+clear
+heroku status 
+echo
+echo "Pushing to heroku - study-space.herokuapp.com"
+env -i
+git push Heroku master
+echo 
+git branch
+echo
+echo "Attempt Migration"
+heroku run rake db:migrate --app hack-davis-17
+echo "Open app - check browser"
+`heroku open`

@@ -1,0 +1,11 @@
+#!/bin/bash
+# Pull the ENV variables from heroku
+
+clear
+echo -n "" > .env
+echo "Pulling from Heroku."
+heroku config:get AUTH0_CLIENT_ID -s >> .env --app hack-davis-17
+heroku config:get AUTH0_SECRET -s >> .env --app hack-davis-17
+heroku config:get CURRENT_PRIVACY_POLICY -s >> .env --app hack-davis-17
+
+echo ".env created."
