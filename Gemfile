@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -17,7 +18,6 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -32,13 +32,32 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Use react for front end
+gem 'react-rails'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # Rspec for testing
+  gem 'rspec-rails', '~> 3.5'
+  # Factories
+  gem 'factory_girl_rails'
+  # Capybara
+  gem 'capybara'
 end
+
+group :test do
+  # For database conflicts
+  gem 'database_cleaner'
+end
+
+# Omniauth (Auth0)
+gem 'omniauth', '~> 1.3.1'
+gem 'omniauth-auth0', '~> 1.4.2'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -47,6 +66,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+   # Better errors
+  gem "better_errors"
+  # Rubocop
+  gem 'rubocop', '~> 0.45.0', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
