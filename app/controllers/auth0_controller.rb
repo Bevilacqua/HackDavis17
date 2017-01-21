@@ -1,6 +1,7 @@
 class Auth0Controller < ApplicationController
   def callback
-  	#TODO
+  	auth_hash = request.env['omniauth.auth']
+    puts auth_hash["uid"]
   end
 
   def failure
