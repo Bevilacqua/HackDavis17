@@ -33292,7 +33292,7 @@ var ChatRoom = React.createClass({
 
     mountProcess: function () {
         this.fetchItems();
-        this.setPolling = setInterval(this.fetchGroup, 10000);
+        setInterval(this.fetchItems, 500);
     },
 
     componentWillUnmount: function () {
@@ -33306,7 +33306,9 @@ var ChatRoom = React.createClass({
 
         $.getJSON(this.props.items_path + ".json", function (data) {
             return _this.setState({ items: data });
-        }).done((function () {}).bind(this));
+        }).done((function () {
+            alert("update");
+        }).bind(this));
     },
 
     // HANDLE

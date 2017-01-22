@@ -14,11 +14,11 @@ var ChatRoom = React.createClass({
 
     mountProcess: function() {
 		this.fetchItems();
-		this.setPolling = setInterval(this.fetchGroup, 10000);
+        setInterval(this.fetchItems, 500);
     },
 
     componentWillUnmount: function() {
-    	clearInterval(this.setPolling);
+        clearInterval(this.setPolling);
     },
 
 
@@ -30,7 +30,7 @@ var ChatRoom = React.createClass({
 			(data) => this.setState({items: data})
 		)
 		.done(function() {
-
+            alert("update");
 		}.bind(this));
 	},
 
