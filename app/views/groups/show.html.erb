@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Group: <%= @group.name %></h1>
+<small>JoinLink: <emp>study-space-dev.com:5000/join/via/<%= @group.join_id %></emp></small>
 
 <h3>Users</h3>
 <% @group.users.each do |user| %>
