@@ -74,6 +74,8 @@ end
 
 gem 'rest-client', '~> 2.0'
 gem 'wolfram'
+gem 'sucker_punch', '~> 2.0'
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
