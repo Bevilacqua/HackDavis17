@@ -8,6 +8,11 @@
   border: 1px solid #26d7b8;
   border-radius: 5px;
   padding: 5px;
+  margin-bottom: 10px;
+}
+
+#message-area {
+  margin-top: 10px;
 }
 
 .form-control {
@@ -28,20 +33,16 @@
   color: gray;
 }
 
-.chat-room {
+.chat-box {
   overflow-y: scroll;
   height: 50%;
   width: 100%;
 }
 
-.chat-box {
-  height: 50%;
-  border: 1px;
-}
 
 #message_bar_input {
   width: 100%;
-  border-radius: 5px;
+  border-radius-left: 5px;
 }
 
 .tags {
