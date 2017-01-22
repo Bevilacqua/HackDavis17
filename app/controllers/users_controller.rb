@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     if params[:group_id]
       if group = Group.find(params[:group_id])
         @users = group.users
+        return
       end
     end
     @users = User.all
