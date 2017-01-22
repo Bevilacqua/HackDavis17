@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <% if notice %>
+    	<div class="alert alert-success alert-dismissable">
+    	  <a href="#" class="close" data-dismiss="alert" id="notice" aria-label="close">&times;</a>
+    	  <strong>AYYYY!</strong> <%= notice %>
+    	</div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

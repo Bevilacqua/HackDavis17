@@ -66,7 +66,11 @@ class GroupsController < ApplicationController
 
   def join
     @group = Group.where(join_id: params[:join_id]).first
+    if !@group
+      redirect_to root_path, notice: 'Group does not exist!'
+    else
     puts @group.id
+    end
   end
 
   private
