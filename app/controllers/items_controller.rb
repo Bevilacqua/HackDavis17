@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
     if params[:group_id]
       if group = Group.find(params[:group_id])
         @items = group.items
+      end
     end
     @items = Item.all
   end
