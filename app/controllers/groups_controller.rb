@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_filter :authorize
+  skip_before_filter :authorize, only: ['join']
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
@@ -63,6 +64,11 @@ class GroupsController < ApplicationController
     end
   end
 
+  def join
+    @group = Group.where(join_id: params[:join_id]).first
+    puts @group.id
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_group
@@ -71,6 +77,6 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:group, :user, :id, :name, :user_id)
+      params.require(:group).permit(:group, :user, :id, :name, :user_id, :join_id)
     end
 end

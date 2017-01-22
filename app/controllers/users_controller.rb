@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        cookies[:user_id] = { value: @user.id, :expires => 1.hour.from_now }
+        cookies[:user_id] = { value: @user.id, :expires => 6.hour.from_now }
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
