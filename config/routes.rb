@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 	root 'welcome#index'
 
 	resources :groups
-	get 'join/via/:join_id', to: 'groups#join'
+	get 'join/via/:join_id', to: 'groups#join', as: "join"
 
 	post '/membership/create', to: 'memberships#create', as: "create_membership"
 
