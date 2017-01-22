@@ -15,17 +15,26 @@
 
 		  <%= f.submit "Create New", class: "btn btn-secondary" %>
 		<% end %>
+		<br />
+		<p>
+		<%= link_to "My Account", current_user %> &nbsp;
+		<%= link_to "Home", root_path %>
+		</p>
+		<br /><br />
+		<small>Built by: The <%= link_to "Study Space", 'https://www.study.space' %> Team.</small>
 	</div>
 	<div class="main-panel">
-		<h1>Group: <%= @group.name %></h1>
-		<small>JoinLink: <emp>study-space-dev.com:5000/join/via/<%= @group.join_id %></emp></small>
+		<h1><%= @group.name %></h1>
+		<p>Invite users: <emp><%= link_to join_url(@group.join_id), join_path(@group.join_id) %></emp></p>
 
-		<h3>Users</h3>
+		<h3>Members</h3>
+		<div class="tags">
 		<% @group.users.each do |user| %>
-		<p><%= user.email %></p>
+		<li><p class="tag" style="background-color: #<%= current_user.color %>"><%= user.email %></p></li>
 		<% end %>
+		</div>
 
-		<h3>Items</h3>
+		<h3>Chat</h3>
 		<% @group.items.each do |item| %>
 		<p><strong><%= item.title %></strong></p>
 		<p><%= item.body %></p>

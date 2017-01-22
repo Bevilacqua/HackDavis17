@@ -15,6 +15,10 @@
 
 		  <%= f.submit "Create New", class: "btn btn-secondary" %>
 		<% end %>
+		<br />
+		<%= link_to "Home", root_path %>
+		<br /><br />
+		<small>Built by: The <%= link_to "Study Space", 'https://www.study.space' %> Team.</small>
 	</div>
 	<div class="main-panel">
 		<h2 class="center" id="name">Hello, <%= @user.first_name %> <%= @user.last_name %>!</h2>
