@@ -47,7 +47,9 @@ body {
  	display: flex;
  	margin: 0;
  	justify-content: space-between;
+ 	align-items: stretch;
  	padding: 0 !important;
+ 	width: 100%;
 }
 
 .group-panel {
@@ -68,5 +70,6 @@ body {
 	padding-left: 8%;
 	flex: 3 1 auto;
 	padding-top: 10px;
+	padding-right: 15px;
 }
 

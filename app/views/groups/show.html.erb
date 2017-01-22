@@ -8,13 +8,15 @@
 		<% end %>
 		<br />
 		<h2>Create a new group.</h2>
-		<%= form_for Group.new do |f| %>
-		  <%= f.label :name %>:
-		  <%= f.text_field :name %><br />
-		  <%= f.hidden_field :user_id, :value => current_user.id %>
+		<div class="create-group">
+			<%= form_for Group.new do |f| %>
+			  <%= f.label :name %>:
+			  <%= f.text_field :name %><br />
+			  <%= f.hidden_field :user_id, :value => current_user.id %>
 
-		  <%= f.submit "Create New", class: "btn btn-secondary" %>
-		<% end %>
+			  <%= f.submit "Create New", class: "btn btn-secondary" %>
+			<% end %>
+		</div>
 		<br />
 		<p>
 		<%= link_to "My Account", current_user %> &nbsp;
@@ -28,17 +30,19 @@
 		<p>Invite members: <emp><%= link_to join_url(@group.join_id), join_path(@group.join_id) %></emp></p>
 
 		<h3>Members</h3>
-		<%= react_component('ChatUsers', 
+		<%= react_component('ChatUsers',
 			user_path: users_path,
-			group_id: @group.id) 
-		%>	
+			group_id: @group.id)
+		%>
 
-		<h3>Chat</h3>
-		<%= react_component('ChatRoom', 
-			group_path: group_path,
-			items_path: items_path,
-			group_id: @group.id,
-			user: current_user) 
-		%>	
+		<br /><h3>Chat</h3> <br />
+		<div class="chat-room">
+			<%= react_component('ChatRoom',
+				group_path: group_path,
+				items_path: items_path,
+				group_id: @group.id,
+				user: current_user)
+			%>
+		</div>
 	</div>
 </div>
