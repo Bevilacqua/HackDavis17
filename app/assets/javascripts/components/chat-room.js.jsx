@@ -57,7 +57,7 @@ var ChatRoom = React.createClass({
         .done(function() {
             this.setState({message_val: ""});
             this.fetchItems();
-        } .bind(this));
+        }.bind(this));
         }
     },
     
@@ -74,7 +74,7 @@ var ChatRoom = React.createClass({
         .done(function() {
             this.setState({message_val: ""});
             this.fetchItems();
-        } .bind(this));
+        }.bind(this));
     },
 
 // STATE

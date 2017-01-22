@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
+        @item.interpret
         format.html { redirect_to @item.group, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
