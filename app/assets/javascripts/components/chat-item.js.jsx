@@ -45,6 +45,7 @@ var ChatItem = React.createClass({
            <p>{this.props.body}</p>
            {item_img}
          </div>
+
        );
 	}
 

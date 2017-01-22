@@ -7,12 +7,17 @@
 .chatMessage {
   border: 1px solid #26d7b8;
   border-radius: 5px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  padding: 5px;
 }
 
-#messageBar {
+.form-control {
   color: #26d7b8;
+  border: 1px solid #26d7b8;
+}
+
+.format-button {
+  background-color: #26d7b8;
+  border: 1px solid #26d7b8;
 }
 
 .create-group {
@@ -36,6 +41,7 @@
 
 #message_bar_input {
   width: 100%;
+  border-radius: 5px;
 }
 
 .tags {
