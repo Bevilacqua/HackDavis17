@@ -66,6 +66,10 @@ group :development do
   gem 'rubocop', '~> 0.45.0', require: false
   # Bootstrap
   gem 'bootstrap', '~> 4.0.0.alpha6'
+  # Rails-assets-tether
+  source 'https://rails-assets.org' do
+    gem 'rails-assets-tether', '>= 1.3.3'
+  end
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
