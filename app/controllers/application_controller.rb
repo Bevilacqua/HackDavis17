@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find_by(id: cookies[:user_id]) if cookies[:user_id]
-    puts @current_user.id
-    return @current_user
   end
 
   def authorize
