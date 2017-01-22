@@ -27,10 +27,12 @@ var ChatRoom = React.createClass({
 	fetchItems: function() {
 		$.getJSON(
 			this.props.items_path + ".json",
+            {
+                group_path: this.props.group_id,
+            },
 			(data) => this.setState({items: data})
 		)
 		.done(function() {
-            alert("update");
 		}.bind(this));
 	},
 

@@ -11109,7 +11109,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 
 /* line 17, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tag {
+  background: #eee;
   border-radius: 3px 0 0 3px;
+  color: #999;
   display: inline-block;
   height: 26px;
   line-height: 26px;
@@ -11120,7 +11122,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   -webkit-transition: color 0.2s;
 }
 
-/* line 29, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 31, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tag::before {
   background: #fff;
   border-radius: 10px;
@@ -11131,6 +11133,29 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   position: absolute;
   width: 6px;
   top: 10px;
+}
+
+/* line 43, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 54, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+/* line 59, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.tag:hover::after {
+  border-left-color: crimson;
 }
 
 /* line 5, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
