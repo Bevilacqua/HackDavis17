@@ -7,14 +7,15 @@
 			</p>
 		<% end %>
 		<br />
-		<h2>Create a new group.</h2>
-		<%= form_for @group do |f| %>
-		  <%= f.label :name %>:
-		  <%= f.text_field :name %><br />
-		  <%= f.hidden_field :user_id, :value => @user.id %>
+		<h2>Create a new group.</h2><br />
+		<div class="create-group">
+			<%= form_for @group do |f| %>
+			  <%= f.text_field :name, placeholder: 'name', class: 'group-name' %><br />
+			  <%= f.hidden_field :user_id, :value => @user.id %>
 
-		  <%= f.submit "Create New", class: "btn btn-secondary" %>
-		<% end %>
+			  <br /><%= f.submit "Create New", class: "btn btn-secondary" %>
+			<% end %>
+		</div>
 		<br />
 		<%= link_to "Home", root_path %>
 		<br /><br />

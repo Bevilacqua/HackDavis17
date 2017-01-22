@@ -15,8 +15,7 @@
   margin-top: 10px;
 }
 
-.form-control {
-  color: #26d7b8;
+.message-box {
   border: 1px solid #26d7b8;
 }
 
@@ -25,8 +24,10 @@
   border: 1px solid #26d7b8;
 }
 
-.create-group {
-  display: inline-block;
+.group-name {
+  border: 1px;
+  border-radius: 4px;
+  padding: 5px;
 }
 
 .time {
