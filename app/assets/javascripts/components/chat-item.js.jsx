@@ -30,9 +30,14 @@ var ChatItem = React.createClass({
 // RENDER
 
 	render() {
-        
+
        return(
-           <p>{this.props.title} {this.props.body} {this.props.updated_at}</p>
+         <div className="chatMessage">
+           <h6><strong>{this.props.title} </strong>
+              <small className="time">{this.props.updated_at}</small>
+           </h6>
+           <p>{this.props.body}</p>
+         </div>
        );
 	}
 

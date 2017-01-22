@@ -42,7 +42,7 @@ var ChatRoom = React.createClass({
     handleMessageChange: function(event) {
         this.setState({message_val: event.target.value})
     },
-    
+
     handleKeyPress: function(event){
         if (event.key === 'Enter') {
             event.preventDefault(); //when enter is clicked doesn't reoload page
@@ -60,7 +60,7 @@ var ChatRoom = React.createClass({
         }.bind(this));
         }
     },
-    
+
     handleSend: function(event) {
         event.preventDefault(); //when enter is clicked doesn't reoload page
         $.post(
@@ -90,22 +90,24 @@ var ChatRoom = React.createClass({
 // RENDER
 
 	render() {
-        
+
         if(!this.state.items || this.state.items == undefined) {
             return (
                 <div id="chatRoom" >
                     <p>loading</p>
                 </div>
             );
-            
+
         }
-        
+
         var createItem = (item) => (
                 <ChatItem title={item.title} body={item.body} updated_at={item.updated_at} key={item.id} />
             );
         return (
             <div id="chatRoom" >
+                <div className="chat-box">
                 {this.state.items.map(createItem)}
+                </div>
                 <div id="messageBar">
                     <input type="text" className="form-control" id="message_bar_input" placeholder="Hello World" onChange={this.handleMessageChange} value={this.state.message_val} onKeyPress={this.handleKeyPress}></input>
                     <button className="btn btn-primary" id="message_bar_button" onClick={this.handleSend}>Send</button>

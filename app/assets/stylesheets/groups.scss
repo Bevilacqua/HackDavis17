@@ -1,17 +1,52 @@
 .invitation {
   background-color: #26d7b8;
   height: 100vh;
+  padding-top: 15em;
+}
+
+.chatMessage {
+  border: 1px solid #26d7b8;
+  border-radius: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#messageBar {
+  color: #26d7b8;
+}
+
+.create-group {
+  display: inline-block;
+}
+
+.time {
+  color: gray;
+}
+
+.chat-room {
+  overflow-y: scroll;
+  height: 50%;
+  width: 100%;
+}
+
+.chat-box {
+  height: 50%;
+  border: 1px;
+}
+
+#message_bar_input {
+  width: 100%;
 }
 
 .tags {
   list-style: none;
   margin: 0;
-  overflow: hidden; 
+  overflow: hidden;
   padding: 0;
 }
 
 .tags li {
-  float: left; 
+  float: left;
 }
 
 .tag {
@@ -57,5 +92,7 @@
 }
 
 .tag:hover::after {
-   border-left-color: crimson; 
+   border-left-color: crimson;
 }
+
+
