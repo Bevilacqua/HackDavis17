@@ -21,5 +21,3 @@
 //= require bootstrap
 //= require tether
 
-$("#chatRoom").animate({ scrollTop: $(document).height() }, "slow");
-  return false;
