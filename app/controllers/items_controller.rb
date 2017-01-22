@@ -5,6 +5,10 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
+    if params[:group_id]
+      if group = Group.find(params[:group_id])
+        @items = group.items
+    end
     @items = Item.all
   end
 
