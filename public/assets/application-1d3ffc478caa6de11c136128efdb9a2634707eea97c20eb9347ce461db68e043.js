@@ -33232,46 +33232,61 @@ var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationDat
 
 
 var ChatItem = React.createClass({
-	displayName: "ChatItem",
+  displayName: "ChatItem",
 
-	propTypes: {
-		title: React.PropTypes.string, // Path to get the title of the item
-		body: React.PropTypes.string, // Path to the item body
-		updated_at: React.PropTypes.any },
+  propTypes: {
+    title: React.PropTypes.string, // Path to get the title of the item
+    body: React.PropTypes.string, // Path to the item body
+    updated_at: React.PropTypes.any },
 
-	// time stamp of update
-	// WORKFLOW
+  // time stamp of update
+  // WORKFLOW
 
-	componentDidMount: function () {
-		this.mountProcess();
-	},
+  componentDidMount: function () {
+    this.mountProcess();
+  },
 
-	mountProcess: function () {},
+  mountProcess: function () {},
 
-	// FETCH
+  // FETCH
 
-	// HANDLE
+  // HANDLE
 
-	// STATE
+  // STATE
 
-	getInitialState: function () {
-		return {};
-	},
+  getInitialState: function () {
+    return {};
+  },
 
-	// RENDER
+  // RENDER
 
-	render: function () {
+  render: function () {
 
-		return React.createElement(
-			"p",
-			null,
-			this.props.title,
-			" ",
-			this.props.body,
-			" ",
-			this.props.updated_at
-		);
-	}
+    return React.createElement(
+      "div",
+      { className: "chatMessage" },
+      React.createElement(
+        "h6",
+        null,
+        React.createElement(
+          "strong",
+          null,
+          this.props.title,
+          " "
+        ),
+        React.createElement(
+          "small",
+          { className: "time" },
+          this.props.updated_at
+        )
+      ),
+      React.createElement(
+        "p",
+        null,
+        this.props.body
+      )
+    );
+  }
 
 });
 var ChatRoom = React.createClass({
@@ -33305,7 +33320,7 @@ var ChatRoom = React.createClass({
         var _this = this;
 
         $.getJSON(this.props.items_path + ".json", {
-            group_path: this.props.group_id
+            group_id: this.props.group_id
         }, function (data) {
             return _this.setState({ items: data });
         }).done((function () {}).bind(this));
@@ -33338,7 +33353,6 @@ var ChatRoom = React.createClass({
             body: this.state.message_val,
             group_id: this.props.group_id
         }).done((function () {
-            alert("test");
             this.setState({ message_val: "" });
             this.fetchItems();
         }).bind(this));
@@ -33376,7 +33390,11 @@ var ChatRoom = React.createClass({
         return React.createElement(
             "div",
             { id: "chatRoom" },
-            this.state.items.map(createItem),
+            React.createElement(
+                "div",
+                { className: "chat-box" },
+                this.state.items.map(createItem)
+            ),
             React.createElement(
                 "div",
                 { id: "messageBar" },
@@ -33420,7 +33438,7 @@ var ChatUsers = React.createClass({
     var _this = this;
 
     $.getJSON(this.props.user_path + ".json", {
-      group_path: this.props.group_id
+      group_id: this.props.group_id
     }, function (data) {
       return _this.setState({ users: data });
     }).done((function () {}).bind(this));
@@ -43016,4 +43034,6 @@ return Tether;
 
 
 
-;
+
+$("#chatRoom").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
