@@ -33338,6 +33338,7 @@ var ChatRoom = React.createClass({
             body: this.state.message_val,
             group_id: this.props.group_id
         }).done((function () {
+            alert("test");
             this.setState({ message_val: "" });
             this.fetchItems();
         }).bind(this));
