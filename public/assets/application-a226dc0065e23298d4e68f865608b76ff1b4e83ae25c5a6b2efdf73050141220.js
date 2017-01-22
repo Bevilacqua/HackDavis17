@@ -33330,6 +33330,11 @@ var ChatRoom = React.createClass({
 
     // HANDLE
 
+    handleReturnToBottom: function () {
+        var mydiv = $(".main-panel");
+        mydiv.scrollTop(mydiv.prop("scrollHeight"));
+    },
+
     handleMessageChange: function (event) {
         this.setState({ message_val: event.target.value });
     },
@@ -33343,7 +33348,9 @@ var ChatRoom = React.createClass({
                 group_id: this.props.group_id
             }).done((function () {
                 this.setState({ message_val: "" });
-                this.fetchItems();
+                this.fetchItems(function () {
+                    this.handleReturnToBottom;
+                });
             }).bind(this));
         }
     },
@@ -33356,7 +33363,9 @@ var ChatRoom = React.createClass({
             group_id: this.props.group_id
         }).done((function () {
             this.setState({ message_val: "" });
-            this.fetchItems();
+            this.fetchItems(function () {
+                this.handleReturnToBottom;
+            });
         }).bind(this));
     },
 
@@ -33373,7 +33382,6 @@ var ChatRoom = React.createClass({
     // RENDER
 
     render: function () {
-
         if (!this.state.items || this.state.items == undefined) {
             return React.createElement(
                 "div",
@@ -33394,12 +33402,21 @@ var ChatRoom = React.createClass({
             { id: "chatRoom" },
             React.createElement(
                 "div",
+                { "class": "center btn return_to_bottom", onClick: this.handleReturnToBottom },
+                React.createElement(
+                    "p",
+                    null,
+                    "Scroll To Bottom"
+                )
+            ),
+            React.createElement(
+                "div",
                 { className: "chat-box" },
                 this.state.items.map(createItem)
             ),
             React.createElement(
                 "div",
-                { className: "input-group" },
+                { className: "input-group", id: "message-area" },
                 React.createElement("input", { type: "text", className: "form-control", id: "message_bar_input", placeholder: "Enter text here.", onChange: this.handleMessageChange, value: this.state.message_val, onKeyPress: this.handleKeyPress }),
                 React.createElement(
                     "span",
@@ -33483,7 +33500,7 @@ var ChatUsers = React.createClass({
         null,
         React.createElement(
           "p",
-          { className: "tag" },
+          { className: "tag", key: user.id },
           user.first_name,
           " ",
           user.last_name
