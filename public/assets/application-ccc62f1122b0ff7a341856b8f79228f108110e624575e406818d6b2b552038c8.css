@@ -11099,44 +11099,51 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .chatMessage {
   border: 1px solid #26d7b8;
   border-radius: 5px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  padding: 5px;
 }
 
-/* line 14, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
-#messageBar {
+/* line 13, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.form-control {
   color: #26d7b8;
+  border: 1px solid #26d7b8;
 }
 
 /* line 18, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.format-button {
+  background-color: #26d7b8;
+  border: 1px solid #26d7b8;
+}
+
+/* line 23, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .create-group {
   display: inline-block;
 }
 
-/* line 22, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 27, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .time {
   color: gray;
 }
 
-/* line 26, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 31, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .chat-room {
   overflow-y: scroll;
   height: 50%;
   width: 100%;
 }
 
-/* line 32, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 37, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .chat-box {
   height: 50%;
   border: 1px;
 }
 
-/* line 37, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 42, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 #message_bar_input {
   width: 100%;
+  border-radius: 5px;
 }
 
-/* line 41, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 47, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tags {
   list-style: none;
   margin: 0;
@@ -11144,12 +11151,12 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   padding: 0;
 }
 
-/* line 48, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 54, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tags li {
   float: left;
 }
 
-/* line 52, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 58, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tag {
   background: #eee;
   border-radius: 3px 0 0 3px;
@@ -11164,7 +11171,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   -webkit-transition: color 0.2s;
 }
 
-/* line 66, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 72, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tag::before {
   background: #fff;
   border-radius: 10px;
@@ -11177,7 +11184,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   top: 10px;
 }
 
-/* line 78, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 84, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tag::after {
   background: #fff;
   border-bottom: 13px solid transparent;
@@ -11189,13 +11196,13 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   top: 0;
 }
 
-/* line 89, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 95, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tag:hover {
   background-color: crimson;
   color: white;
 }
 
-/* line 94, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+/* line 100, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
 .tag:hover::after {
   border-left-color: crimson;
 }
@@ -11412,10 +11419,10 @@ body {
   color: black;
   width: 100% !important;
   height: 100vh;
-  padding-left: 8%;
+  padding-left: 2.5%;
   -webkit-box-flex: 3;
       -ms-flex: 3 1 auto;
           flex: 3 1 auto;
   padding-top: 10px;
-  padding-right: 15px;
+  padding-right: 2.5%;
 }

@@ -33237,9 +33237,10 @@ var ChatItem = React.createClass({
   propTypes: {
     title: React.PropTypes.string, // Path to get the title of the item
     body: React.PropTypes.string, // Path to the item body
-    updated_at: React.PropTypes.any },
+    updated_at: React.PropTypes.any, // time stamp of update
+    image_url: React.PropTypes.string },
 
-  // time stamp of update
+  // Path to image
   // WORKFLOW
 
   componentDidMount: function () {
@@ -33261,7 +33262,7 @@ var ChatItem = React.createClass({
   // RENDER
 
   render: function () {
-
+    var item_img = this.props.image_url ? React.createElement("img", { src: this.props.image_url }) : React.createElement("span", null);
     return React.createElement(
       "div",
       { className: "chatMessage" },
@@ -33284,7 +33285,8 @@ var ChatItem = React.createClass({
         "p",
         null,
         this.props.body
-      )
+      ),
+      item_img
     );
   }
 
@@ -33385,7 +33387,7 @@ var ChatRoom = React.createClass({
         }
 
         var createItem = function (item) {
-            return React.createElement(ChatItem, { title: item.title, body: item.body, updated_at: item.updated_at, key: item.id });
+            return React.createElement(ChatItem, { title: item.title, body: item.body, updated_at: item.updated_at, image_url: item.image_url, key: item.id });
         };
         return React.createElement(
             "div",
@@ -33397,12 +33399,16 @@ var ChatRoom = React.createClass({
             ),
             React.createElement(
                 "div",
-                { id: "messageBar" },
-                React.createElement("input", { type: "text", className: "form-control", id: "message_bar_input", placeholder: "Hello World", onChange: this.handleMessageChange, value: this.state.message_val, onKeyPress: this.handleKeyPress }),
+                { className: "input-group" },
+                React.createElement("input", { type: "text", className: "form-control", id: "message_bar_input", placeholder: "Enter text here.", onChange: this.handleMessageChange, value: this.state.message_val, onKeyPress: this.handleKeyPress }),
                 React.createElement(
-                    "button",
-                    { className: "btn btn-primary", id: "message_bar_button", onClick: this.handleSend },
-                    "Send"
+                    "span",
+                    { className: "input-group-btn" },
+                    React.createElement(
+                        "button",
+                        { className: "btn btn-secondary format-button", id: "message_bar_button", onClick: this.handleSend },
+                        "Send"
+                    )
                 )
             )
         );
@@ -43035,5 +43041,4 @@ return Tether;
 
 
 
-$("#chatRoom").animate({ scrollTop: $(document).height() }, "slow");
-  return false;
+;
