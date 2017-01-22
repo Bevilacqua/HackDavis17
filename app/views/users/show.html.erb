@@ -22,5 +22,19 @@
 	</div>
 	<div class="main-panel">
 		<h2 class="center" id="name">Hello, <%= @user.first_name %> <%= @user.last_name %>!</h2>
+		<br />
+		<div class="panel-wrap">
+			<div class="form">
+
+			<%= form_for @user, :url => { :action => :update } do |f| %>
+				First Name: <%= f.text_field :first_name, class: 'form-group form-control', type: 'first-name' %>
+        Last Name: <%= f.text_field :last_name, class: 'form-group form-control', type: 'last-name' %>
+        Email: <%= f.text_field :email, class: 'form-group form-control', type: 'email' %>
+        New Password: <%= f.password_field :password, class: 'form-group form-control', type: 'password' %>
+        Password Confirmation: <%= f.password_field :password_confirmation, class: 'form-group form-control', type: 'password' %>
+        <%= f.submit "Submit", class: 'btn btn-secondary'%>
+			<% end %>
+			</div>
+		</div>
 	</div>
 </div>
