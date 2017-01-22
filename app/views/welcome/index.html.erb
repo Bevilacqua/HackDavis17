@@ -1,8 +1,20 @@
 <header>
 	<div class="textfield">
-		<form>
-			<input name="username" type="text" value="username"> <input name="password" type="text" value="password"> <input type="submit" value="Submit">
-		</form>
+		<% if !current_user %>
+			<%= form_tag '/login' do %>
+
+			  Email: <%= text_field_tag :email %>
+			  Password: <%= password_field_tag :password %>
+			  <%= submit_tag "Login" %>
+
+			<% end %>
+			<%= link_to "Signup", signup_path %>
+		<% else %>
+			<p>
+				<%= current_user.email %>
+				<%= link_to "Logout", logout_path %>
+			</p>
+		<% end %>
 	</div>
 </header>
 <main>
