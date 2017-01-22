@@ -1,12 +1,16 @@
-<h1>Signup!</h1>
+<div class="text-header">
+  <h1>Signup!</h1> </br>
 
-<%= form_for :user, url: '/users' do |f| %>
-
-  First Name: <%= f.text_field :first_name %>
-  Last Name: <%= f.text_field :last_name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
+  <%= form_for :user, url: '/users' do |f| %>
+    <form>
+    <div class="text">
+      First Name: <%= f.text_field :first_name, class: 'form-group', type: 'first-name' %> </br>
+      Last Name: <%= f.text_field :last_name, class: 'form-group', type: 'last-name' %> </br>
+      Email: <%= f.text_field :email, class: 'form-group', type: 'email' %> </br>
+      Password: <%= f.password_field :password, class: 'form-group', type: 'password' %> </br>
+      Password Confirmation: <%= f.password_field :password_confirmation, class: 'form-group', type: 'password' %> </br>
+      <%= f.submit "Submit" %>
+    </div>
+    </form>
+</div>
 <% end %>
