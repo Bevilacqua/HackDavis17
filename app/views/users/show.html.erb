@@ -1,20 +1,22 @@
 <div class="container">
-	<div class="group-container">
+	<div class="group-panel center">
+		<h2>Your groups.</h2>
+		<% @user.groups.each do |group| %>
+			<p>
+				<%= link_to group.name, group %>
+			</p>
+		<% end %>
+		<br />
 		<h2>Create a new group.</h2>
 		<%= form_for @group do |f| %>
 		  <%= f.label :name %>:
 		  <%= f.text_field :name %><br />
 		  <%= f.hidden_field :user_id, :value => @user.id %>
 
-		  <%= f.submit %>
+		  <%= f.submit "Create New", class: "btn btn-secondary" %>
 		<% end %>
 	</div>
 	<div class="main-panel">
-		<h2 class="center">Hello, <%= @user.first_name %> <%= @user.last_name %>!</h2>
+		<h2 class="center" id="name">Hello, <%= @user.first_name %> <%= @user.last_name %>!</h2>
 	</div>
 </div>
-
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
