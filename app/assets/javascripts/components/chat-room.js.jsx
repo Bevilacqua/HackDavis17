@@ -121,7 +121,7 @@ var ChatRoom = React.createClass({
                     {this.state.items.map(createItem)}
                 </div>
                 <div className="input-group" id="message-area">
-                    <input type="text" className="form-control" id="message_bar_input" placeholder="Enter text here." onChange={this.handleMessageChange} value={this.state.message_val} onKeyPress={this.handleKeyPress}></input>
+                    <input type="text" className="form-control" id="message_bar_input" placeholder="Chat here. (Start with 'wolfram' to search WolframAlpha)" onChange={this.handleMessageChange} value={this.state.message_val} onKeyPress={this.handleKeyPress}></input>
                     <span className="input-group-btn">
                       <button className="btn btn-secondary format-button" id="message_bar_button" onClick={this.handleSend}>Send</button>
                     </span>
