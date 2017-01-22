@@ -21,6 +21,7 @@
 @import "memberships";
 @import "sessions";
 @import "welcome";
+@import "users";
 
 body {
   font-family: 'Didact Gothic', sans-serif !important;
@@ -68,3 +69,4 @@ body {
 	flex: 3 1 auto;
 	padding-top: 10px;
 }
+

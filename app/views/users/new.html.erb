@@ -1,16 +1,16 @@
-<div class="text-header">
-  <h1>Signup!</h1> </br>
+<div class="user-wrap">
+  <div class="text-header">
+    <h1>Signup!</h1> </br>
 
-  <%= form_for :user, url: '/users' do |f| %>
-    <form>
-    <div class="text">
-      First Name: <%= f.text_field :first_name, class: 'form-group', type: 'first-name' %> </br>
-      Last Name: <%= f.text_field :last_name, class: 'form-group', type: 'last-name' %> </br>
-      Email: <%= f.text_field :email, class: 'form-group', type: 'email' %> </br>
-      Password: <%= f.password_field :password, class: 'form-group', type: 'password' %> </br>
-      Password Confirmation: <%= f.password_field :password_confirmation, class: 'form-group', type: 'password' %> </br>
-      <%= f.submit "Submit" %>
-    </div>
-    </form>
+    <%= form_for :user, url: '/users' do |f| %>
+      <div class="text">
+        First Name: <%= f.text_field :first_name, class: 'form-group form-control', type: 'first-name' %>
+        Last Name: <%= f.text_field :last_name, class: 'form-group form-control', type: 'last-name' %>
+        Email: <%= f.text_field :email, class: 'form-group form-control', type: 'email' %>
+        Password: <%= f.password_field :password, class: 'form-group form-control', type: 'password' %>
+        Password Confirmation: <%= f.password_field :password_confirmation, class: 'form-group form-control', type: 'password' %>
+        <%= f.submit "Submit", class: 'btn btn-secondary', type: 'button' %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<% end %>
