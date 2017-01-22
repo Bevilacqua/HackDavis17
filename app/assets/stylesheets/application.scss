@@ -26,22 +26,35 @@ body {
   font-family: 'Didact Gothic', sans-serif !important;
 }
 
+.atop {
+	position: absolute;
+	top: 0;
+}
+
 .center {
 	text-align: center;
 }
 
 .container {
  	display: flex;
+ 	margin: 0;
+ 	justify-content: space-between;
+ 	padding: 0 !important;
 }
 
 .group-panel {
-	background-color: #1EAC93;
+	background-color: #26d7b8;
 	color: white;
-	flex: 0 1 auto;
+	width: 100%;
+	height: 100vh;
+	flex: 1 1 auto;
 }
 
 .main-panel {
 	background-color: white;
 	color: black;
-	flex: 0 3 auto;
+	width: 100% !important;
+	height: 100vh;
+	padding-left: 8%;
+	flex: 3 1 auto;
 }

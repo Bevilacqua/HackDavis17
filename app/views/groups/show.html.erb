@@ -1,26 +1,44 @@
-<h1>Group: <%= @group.name %></h1>
-<small>JoinLink: <emp>study-space-dev.com:5000/join/via/<%= @group.join_id %></emp></small>
+<div class="container">
+	<div class="group-panel center">
+		<h2>Your groups.</h2>
+		<% current_user.groups.each do |group| %>
+			<p>
+				<%= link_to group.name, group %>
+			</p>
+		<% end %>
+		<br />
+		<h2>Create a new group.</h2>
+		<%= form_for Group.new do |f| %>
+		  <%= f.label :name %>:
+		  <%= f.text_field :name %><br />
+		  <%= f.hidden_field :user_id, :value => current_user.id %>
 
-<h3>Users</h3>
-<% @group.users.each do |user| %>
-<p><%= user.email %></p>
-<% end %>
+		  <%= f.submit "Create New", class: "btn btn-secondary" %>
+		<% end %>
+	</div>
+	<div class="main-panel">
+		<h1>Group: <%= @group.name %></h1>
+		<small>JoinLink: <emp>study-space-dev.com:5000/join/via/<%= @group.join_id %></emp></small>
 
-<h3>Items</h3>
-<% @group.items.each do |item| %>
-<p><strong><%= item.title %></strong></p>
-<p><%= item.body %></p>
-<% end %>
+		<h3>Users</h3>
+		<% @group.users.each do |user| %>
+		<p><%= user.email %></p>
+		<% end %>
 
-<%= form_for Item.new do |f| %>
-	<%= f.hidden_field :title, value: "From: " + current_user.first_name + current_user.last_name %>
-	<%= f.label :body %>
-	<%= f.text_field :body %>
+		<h3>Items</h3>
+		<% @group.items.each do |item| %>
+		<p><strong><%= item.title %></strong></p>
+		<p><%= item.body %></p>
+		<% end %>
 
-	<%= f.hidden_field :group_id, :value => @group.id %>
+		<%= form_for Item.new do |f| %>
+			<%= f.hidden_field :title, value: "From: " + current_user.first_name + current_user.last_name %>
+			<%= f.label :body %>
+			<%= f.text_field :body %>
 
-	<%= f.submit %>
-<% end %>
+			<%= f.hidden_field :group_id, :value => @group.id %>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+			<%= f.submit %>
+		<% end %>	
+	</div>
+</div>
