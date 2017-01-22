@@ -11,7 +11,7 @@
 			<%= link_to "Signup", signup_path %>
 		<% else %>
 			<p>
-				<%= current_user.email %>
+				<%= link_to "#{current_user.first_name} #{current_user.last_name}", current_user %>
 				<%= link_to "Logout", logout_path %>
 			</p>
 		<% end %>
