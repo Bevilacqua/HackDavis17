@@ -33330,7 +33330,8 @@ var ChatRoom = React.createClass({
 
     // HANDLE
 
-    handleReturnToBottom: function () {
+    handleReturnToBottom: function (event) {
+        event.preventDefault();
         var mydiv = $(".main-panel");
         mydiv.scrollTop(mydiv.prop("scrollHeight"));
     },
@@ -33401,13 +33402,9 @@ var ChatRoom = React.createClass({
             "div",
             { id: "chatRoom" },
             React.createElement(
-                "div",
-                { "class": "center btn return_to_bottom", onClick: this.handleReturnToBottom },
-                React.createElement(
-                    "p",
-                    null,
-                    "Scroll To Bottom"
-                )
+                "button",
+                { className: "center btn btn-outline-secondary return_to_bottom", onClick: this.handleReturnToBottom },
+                "Scroll To Bottom"
             ),
             React.createElement(
                 "div",
