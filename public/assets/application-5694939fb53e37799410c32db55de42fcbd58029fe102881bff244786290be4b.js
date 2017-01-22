@@ -33232,46 +33232,61 @@ var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationDat
 
 
 var ChatItem = React.createClass({
-	displayName: "ChatItem",
+  displayName: "ChatItem",
 
-	propTypes: {
-		title: React.PropTypes.string, // Path to get the title of the item
-		body: React.PropTypes.string, // Path to the item body
-		updated_at: React.PropTypes.any },
+  propTypes: {
+    title: React.PropTypes.string, // Path to get the title of the item
+    body: React.PropTypes.string, // Path to the item body
+    updated_at: React.PropTypes.any },
 
-	// time stamp of update
-	// WORKFLOW
+  // time stamp of update
+  // WORKFLOW
 
-	componentDidMount: function () {
-		this.mountProcess();
-	},
+  componentDidMount: function () {
+    this.mountProcess();
+  },
 
-	mountProcess: function () {},
+  mountProcess: function () {},
 
-	// FETCH
+  // FETCH
 
-	// HANDLE
+  // HANDLE
 
-	// STATE
+  // STATE
 
-	getInitialState: function () {
-		return {};
-	},
+  getInitialState: function () {
+    return {};
+  },
 
-	// RENDER
+  // RENDER
 
-	render: function () {
+  render: function () {
 
-		return React.createElement(
-			"p",
-			null,
-			this.props.title,
-			" ",
-			this.props.body,
-			" ",
-			this.props.updated_at
-		);
-	}
+    return React.createElement(
+      "div",
+      { className: "chatMessage" },
+      React.createElement(
+        "h6",
+        null,
+        React.createElement(
+          "strong",
+          null,
+          this.props.title,
+          " "
+        ),
+        React.createElement(
+          "small",
+          { className: "time" },
+          this.props.updated_at
+        )
+      ),
+      React.createElement(
+        "p",
+        null,
+        this.props.body
+      )
+    );
+  }
 
 });
 var ChatRoom = React.createClass({
@@ -33375,7 +33390,11 @@ var ChatRoom = React.createClass({
         return React.createElement(
             "div",
             { id: "chatRoom" },
-            this.state.items.map(createItem),
+            React.createElement(
+                "div",
+                { className: "chat-box" },
+                this.state.items.map(createItem)
+            ),
             React.createElement(
                 "div",
                 { id: "messageBar" },
@@ -43015,4 +43034,6 @@ return Tether;
 
 
 
-;
+
+$("#chatRoom").animate({ scrollTop: $(document).height() }, "slow");
+  return false;
