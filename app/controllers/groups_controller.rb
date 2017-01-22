@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_filter :authorize
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
@@ -24,8 +25,6 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-    puts "create"
-    puts request.params
     @group = Group.new(name: group_params[:name])
     @membership = Membership.create(user_id: group_params[:user_id], group: @group)
 

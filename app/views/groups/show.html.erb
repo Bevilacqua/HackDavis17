@@ -14,9 +14,7 @@
 <% end %>
 
 <%= form_for Item.new do |f| %>
-	<% if current_user %>
-		<%= f.hidden_field :title, :value => "#{current_user.first_name} #{current_user.last_name}" %>
-	<% end %>
+	<%= f.hidden_field :title, value: "From: " + current_user.first_name + current_user.last_name %>
 	<%= f.label :body %>
 	<%= f.text_field :body %>
 

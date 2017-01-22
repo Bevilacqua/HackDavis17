@@ -1,6 +1,10 @@
+<div id="root" style="width: 320px; margin: 40px auto; padding: 10px; border-style: dashed; border-width: 1px; box-sizing: border-box;">
+    embedded area
+</div>
 <script src="https://cdn.auth0.com/js/lock/10.9.1/lock.min.js"></script>
 <script>
-  var lock = new Auth0Lock('LwcYCao342N6XJ0wjNooHeuLGMpoahG6', 'studyspace.auth0.com', {
+  var lock = new Auth0Lock('volG8CFdKfXZ8nnLQnVnhlerYWPfYG76', 'studyspace.auth0.com', {
+    container: 'root',
     auth: {
       redirectUrl: 'http://study-space-dev.com:5000/auth/auth0/callback',
       responseType: 'code',
@@ -9,5 +13,5 @@
       }
     }
   });
+  lock.show();
 </script>
-<button onclick="lock.show();">Login</button>
