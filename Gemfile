@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use postgresql as the database for Active Record
@@ -35,7 +34,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Use react for front end
 gem 'react-rails'
 
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -62,10 +60,12 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-   # Better errors
+  # Better errors
   gem "better_errors"
   # Rubocop
   gem 'rubocop', '~> 0.45.0', require: false
+  # Bootstrap
+  gem 'bootstrap', '~> 4.0.0.alpha6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
