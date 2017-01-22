@@ -33414,7 +33414,7 @@ var ChatRoom = React.createClass({
             React.createElement(
                 "div",
                 { className: "input-group", id: "message-area" },
-                React.createElement("input", { type: "text", className: "form-control", id: "message_bar_input", placeholder: "Enter text here.", onChange: this.handleMessageChange, value: this.state.message_val, onKeyPress: this.handleKeyPress }),
+                React.createElement("input", { type: "text", className: "form-control", id: "message_bar_input", placeholder: "Chat here. (Start with 'wolfram' to search WolframAlpha)", onChange: this.handleMessageChange, value: this.state.message_val, onKeyPress: this.handleKeyPress }),
                 React.createElement(
                     "span",
                     { className: "input-group-btn" },

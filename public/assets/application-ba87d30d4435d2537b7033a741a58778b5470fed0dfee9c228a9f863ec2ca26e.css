@@ -11397,6 +11397,12 @@ body {
 }
 
 /* line 57, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.bak-img {
+  background-image: url("https://s3-us-west-1.amazonaws.com/studyspaceimages/Site/jacobsucks.jpg");
+  background-size: cover;
+}
+
+/* line 65, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11412,7 +11418,36 @@ body {
   width: 100%;
 }
 
-/* line 66, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+/* line 74, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.hide_over {
+  overflow-y: hidden !important;
+}
+
+/* line 78, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.left-panel {
+  background-color: #26d7b8;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  padding-top: 10px;
+}
+
+/* line 87, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.right-panel {
+  color: black;
+  width: 100% !important;
+  height: 100vh;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 0px;
+          flex: 2 1 0;
+  padding-top: 10px;
+  padding-right: 2.5%;
+}
+
+/* line 97, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
 .group-panel {
   background-color: #26d7b8;
   color: white;
@@ -11425,7 +11460,7 @@ body {
   overflow-y: scroll;
 }
 
-/* line 76, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+/* line 107, /Users/jacobbev/Documents/HackDavis17/app/assets/stylesheets/application.scss */
 .main-panel {
   background-color: white;
   color: black;
