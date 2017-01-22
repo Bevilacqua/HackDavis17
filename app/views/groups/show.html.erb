@@ -1,4 +1,27 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Group: <%= @group.name %></h1>
+
+<h3>Users</h3>
+<% @group.users.each do |user| %>
+<p><%= user.email %></p>
+<% end %>
+
+<h3>Items</h3>
+<% @group.items.each do |item| %>
+<p><strong><%= item.title %></strong></p>
+<p><%= item.body %></p>
+<% end %>
+
+<%= form_for Item.new do |f| %>
+	<%= f.hidden_field :title, value: "From: " + current_user.first_name + current_user.last_name %>
+	<%= f.label :body %>
+	<%= f.text_field :body %>
+
+	<%= f.hidden_field :group_id, :value => @group.id %>
+
+	<%= f.submit %>
+<% end %>
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
