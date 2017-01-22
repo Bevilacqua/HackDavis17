@@ -35,6 +35,15 @@
 		</div>
 
 		<h3>Chat</h3>
+		<%= react_component('ChatRoom', 
+			group_path: group_path,
+			items_path: items_path,
+			group_id: @group.id,
+			user: current_user) 
+		%>
+		<br />
+		<br />
+		<p>---VVV old VVV---</p>
 		<% @group.items.each do |item| %>
 		<p><strong><%= item.title %></strong></p>
 		<p><%= item.body %></p>
