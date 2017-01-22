@@ -25,23 +25,24 @@
 		<small>Built by: The <%= link_to "Study Space", 'https://www.study.space' %> Team.</small>
 	</div>
 	<div class="main-panel">
-		<h1><%= @group.name %></h1>
-		<p>Invite members: <emp><%= link_to join_url(@group.join_id), join_path(@group.join_id) %></emp></p>
+		<div style="position: relative !important;">
+			<h1><%= @group.name %></h1>
+			<p>Invite members: <emp><%= link_to join_url(@group.join_id), join_path(@group.join_id) %></emp></p>
 
-		<h3>Members</h3>
-		<%= react_component('ChatUsers',
-			user_path: users_path,
-			group_id: @group.id)
-		%>
-
-		<br /><h3>Chat</h3> <br />
-		<div class="chat-room">
-			<%= react_component('ChatRoom',
-				group_path: group_path,
-				items_path: items_path,
-				group_id: @group.id,
-				user: current_user)
+			<h3>Members</h3>
+			<%= react_component('ChatUsers',
+				user_path: users_path,
+				group_id: @group.id)
 			%>
 		</div>
+
+		<br /><h3>Chat</h3> <br />
+		<%= react_component('ChatRoom',
+			group_path: group_path,
+			items_path: items_path,
+			group_id: @group.id,
+			user: current_user)
+		%>
+		<br />
 	</div>
 </div>

@@ -26,7 +26,7 @@ class APIJob
 		end
 
 		if item.body.partition(" ").first.include?("wolfram")
-			sub_item.body = "Here you go:"
+			sub_item.body = "loading..."
 			sub_item.image_url = "https://api.wolframalpha.com/v1/simple?i=#{item.body.split(' ')[1..-1].join(' ')}&appid=#{ENV['WOLFRAM_KEY']}"
 			sub_item.save
 		end

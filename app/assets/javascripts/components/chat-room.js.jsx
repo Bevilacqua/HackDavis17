@@ -39,6 +39,12 @@ var ChatRoom = React.createClass({
 
 // HANDLE
 
+    handleReturnToBottom: function(event) {
+        event.preventDefault();
+        var mydiv = $(".main-panel");
+        mydiv.scrollTop(mydiv.prop("scrollHeight"));
+    },
+
     handleMessageChange: function(event) {
         this.setState({message_val: event.target.value})
     },
@@ -55,8 +61,10 @@ var ChatRoom = React.createClass({
             }
         )
         .done(function() {
-            this.setState({message_val: ""});
-            this.fetchItems();
+            this.setState({message_val: ""})
+            this.fetchItems(function() {
+                this.handleReturnToBottom
+            })
         }.bind(this));
         }
     },
@@ -72,8 +80,10 @@ var ChatRoom = React.createClass({
             }
         )
         .done(function() {
-            this.setState({message_val: ""});
-            this.fetchItems();
+            this.setState({message_val: ""})
+            this.fetchItems(function() {
+                this.handleReturnToBottom
+            })
         }.bind(this));
     },
 
@@ -90,7 +100,6 @@ var ChatRoom = React.createClass({
 // RENDER
 
 	render() {
-
         if(!this.state.items || this.state.items == undefined) {
             return (
                 <div id="chatRoom" >
@@ -105,11 +114,14 @@ var ChatRoom = React.createClass({
             );
         return (
             <div id="chatRoom" >
+                <button className="center btn btn-outline-secondary return_to_bottom" onClick={this.handleReturnToBottom}>
+                    Scroll To Bottom
+                </button>
                 <div className="chat-box">
-                {this.state.items.map(createItem)}
+                    {this.state.items.map(createItem)}
                 </div>
-                <div className="input-group">
-                    <input type="text" className="form-control message-box" id="message_bar_input" placeholder="Enter text here." onChange={this.handleMessageChange} value={this.state.message_val} onKeyPress={this.handleKeyPress}></input>
+                <div className="input-group" id="message-area">
+                    <input type="text" className="form-control" id="message_bar_input" placeholder="Enter text here." onChange={this.handleMessageChange} value={this.state.message_val} onKeyPress={this.handleKeyPress}></input>
                     <span className="input-group-btn">
                       <button className="btn btn-secondary format-button" id="message_bar_button" onClick={this.handleSend}>Send</button>
                     </span>

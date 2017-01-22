@@ -39,6 +39,16 @@ body {
 	z-index: 100;
 }
 
+.return_to_bottom {
+	position: absolute;
+	top: 15px;
+	width: 15%;
+	left: 50%;
+    -webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	z-index: 115;
+}
+
 .center {
 	text-align: center;
 }
@@ -69,6 +79,8 @@ body {
 	height: 100vh;
 	flex: 4 1 0;
 	padding-left: 2.5%;
+	overflow-y: scroll;
+	flex: 3 1 0;
 	padding-top: 10px;
 	padding-right: 2.5%;
 }

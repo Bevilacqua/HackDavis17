@@ -61,7 +61,7 @@ var ChatUsers = React.createClass({
         }
         
         var createTag = (user) => (
-            <li><p className="tag" >{user.first_name} {user.last_name}</p></li>
+            <li><p className="tag" key={user.id} >{user.first_name} {user.last_name}</p></li>
         );
         return (
             <div className="tags" >
