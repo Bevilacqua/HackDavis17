@@ -101,7 +101,7 @@ var ChatRoom = React.createClass({
         }
 
         var createItem = (item) => (
-                <ChatItem title={item.title} body={item.body} updated_at={item.updated_at} key={item.id} />
+                <ChatItem title={item.title} body={item.body} updated_at={item.updated_at} image_url={item.image_url} key={item.id} />
             );
         return (
             <div id="chatRoom" >
