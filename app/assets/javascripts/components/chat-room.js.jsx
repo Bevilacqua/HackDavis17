@@ -26,7 +26,7 @@ var ChatRoom = React.createClass({
 
 	fetchItems: function() {
 		$.getJSON(
-			this.props.items_path + "/" + this.props.group_id + ".json",
+			this.props.items_path + ".json",
 			(data) => this.setState({items: data})
 		)
 		.done(function() {
@@ -37,7 +37,25 @@ var ChatRoom = React.createClass({
 
 // HANDLE
 
-
+    handleMessageChange: function(event) {
+        this.setState({message_val: event.target.value})
+    },
+    
+    handleSend: function(event) {
+        event.preventDefault(); //when enter is clicked doesn't reoload page
+        $.post(
+            this.props.items_path + ".json",
+            {
+                title: this.props.user.first_name + " " + this.props.user.last_name,
+                body: this.state.message_val,
+                group_id: this.props.group_id
+            }
+        )
+        .done(function() {
+            this.setState({message_val: ""});
+            this.fetchItems();
+        } .bind(this));
+    },
 
 // STATE
 
@@ -45,16 +63,35 @@ var ChatRoom = React.createClass({
 		return({
 			setPolling: 	'',
 			items: 			[],
+            message_val:    "",
 		});
 	},
 
 // RENDER
 
 	render() {
-
-		return (
-			<h4>REACT COMPONENT</h4>
-		);
+        
+        if(!this.state.items || this.state.items == undefined) {
+            return (
+                <div id="chatRoom" >
+                    <p>loading</p>
+                </div>
+            );
+            
+        }
+        
+        var createItem = (item) => (
+                <ChatItem title={item.title} body={item.body} updated_at={item.updated_at} key={item.id} />
+            );
+        return (
+            <div id="chatRoom" >
+                {this.state.items.map(createItem)}
+                <div id="messageBar">
+                    <input type="text" className="form-control" id="message_bar_input" placeholder="Hello World" onChange={this.handleMessageChange} value={this.state.message_val}></input>
+                    <button className="btn btn-primary" id="message_bar_button" onClick={this.handleSend}>Send</button>
+                </div>
+            </div>
+		  );
 	}
 
 });

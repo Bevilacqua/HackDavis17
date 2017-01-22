@@ -40,23 +40,6 @@
 			items_path: items_path,
 			group_id: @group.id,
 			user: current_user) 
-		%>
-		<br />
-		<br />
-		<p>---VVV old VVV---</p>
-		<% @group.items.each do |item| %>
-		<p><strong><%= item.title %></strong></p>
-		<p><%= item.body %></p>
-		<% end %>
-
-		<%= form_for Item.new do |f| %>
-			<%= f.hidden_field :title, value: "From: " + current_user.first_name + current_user.last_name %>
-			<%= f.label :body %>
-			<%= f.text_field :body %>
-
-			<%= f.hidden_field :group_id, :value => @group.id %>
-
-			<%= f.submit %>
-		<% end %>	
+		%>	
 	</div>
 </div>
