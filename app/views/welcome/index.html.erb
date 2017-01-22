@@ -17,19 +17,22 @@
 		<% end %>
 	</div>
 </header>
-<main>
-	<div id="button">
-		<form action="">
-			<input class="button1" name="account" type="button" value="Account">
-		</form>
-		<form action="">
-			<input class="button2" name="groups" type="button" value="Groups">
-		</form>
-		<form action="">
-			<input class="button3" name="memberships" type="button" value="Memberships">
-		</form>
-		<form action="">
-			<input class="button4" name="users" type="button" value="Users">
-		</form>
+
+<div class="container">
+	<div class="hide_over left-panel center">
+		<img src="https://s3-us-west-1.amazonaws.com/studyspaceimages/Site/logo.png" width="65%">
+
+		<h5 style="font-weight: lighter;">welcome to</h5>
+		<h1 class="display-1" style="font-weight: bolder;">Collab</h1>
+		<h5 style="font-weight: lighter;"><em>study groups made simple</em></h5>
+
+		<br /> <br /><br />
+
+		<%= link_to "SIGN UP", signup_path, class: "btn btn-secondary btn-lg" %>
+		<br /><br /><br />
+		<%= link_to "LOG  IN", login_path, class: "btn btn-secondary btn-lg" %>
 	</div>
-</main>
+	<div class="hide_over right-panel bak-img">
+		
+	</div>
+</div>
