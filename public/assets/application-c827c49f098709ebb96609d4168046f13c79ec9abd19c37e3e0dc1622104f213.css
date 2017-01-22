@@ -1,130 +1,3 @@
-/* line 5, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
-.login-header {
-  text-align: center;
-  padding: 1em;
-}
-
-/* line 10, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
-.text {
-  display: inline-block;
-  text-align: left;
-  width: 25%;
-}
-
-/* line 16, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
-.form-group {
-  width: 100%;
-}
-/* line 1, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/users.scss */
-.text-header {
-  text-align: center;
-  padding: 1em;
-}
-
-/* line 6, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/users.scss */
-.text {
-  display: inline-block;
-  text-align: left;
-  width: 25%;
-}
-
-/* line 12, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/users.scss */
-.form-group {
-  width: 100%;
-}
-/* line 5, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.button1 {
-  background-color: lightblue;
-  color: white;
-  text-align: center;
-  font-size: 22px;
-  display: inline-block;
-  border-radius: 8px;
-  border: none;
-  height: 100px;
-  width: 500px;
-  position: absolute;
-  top: 250px;
-  left: 100px;
-}
-
-/* line 21, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.button2 {
-  background-color: lightblue;
-  color: white;
-  text-align: center;
-  font-size: 22px;
-  display: inline-block;
-  border-radius: 8px;
-  border: none;
-  width: 500px;
-  height: 100px;
-  position: absolute;
-  top: 250px;
-  left: 650px;
-}
-
-/* line 35, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.button3 {
-  background-color: lightblue;
-  color: white;
-  text-align: center;
-  font-size: 22px;
-  display: inline-block;
-  border-radius: 8px;
-  border: none;
-  width: 500px;
-  height: 100px;
-  position: absolute;
-  top: 400px;
-  left: 100px;
-}
-
-/* line 49, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.button4 {
-  background-color: lightblue;
-  color: white;
-  text-align: center;
-  font-size: 22px;
-  display: inline-block;
-  border-radius: 8px;
-  border: none;
-  width: 500px;
-  position: absolute;
-  top: 400px;
-  height: 100px;
-  left: 650px;
-}
-
-/* line 64, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.button1:hover {
-  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* line 68, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.button2:hover {
-  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* line 72, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.button3:hover {
-  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* line 76, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.button4:hover {
-  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-
-/* line 79, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
-.textfield {
-  position: absolute;
-  top: 0px;
-  left: 815px;
-  padding: 20px 20px;
-  font-size: 14px;
-  line-height: 30px;
-}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -137,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
 
  */
 /*!
@@ -11216,7 +11088,262 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   }
 }
 
-/* line 21, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+/* line 1, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.invitation {
+  background-color: #26d7b8;
+  height: 100vh;
+}
+
+/* line 6, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* line 13, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.tags li {
+  float: left;
+}
+
+/* line 17, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.tag {
+  border-radius: 3px 0 0 3px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+/* line 29, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/groups.scss */
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+/* line 5, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
+.login-header {
+  text-align: center;
+  padding: 1em;
+}
+
+/* line 10, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
+.text {
+  display: inline-block;
+  text-align: left;
+  width: 25%;
+}
+
+/* line 16, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
+.form-group {
+  width: 100%;
+}
+
+/* line 20, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
+.session-wrap {
+  background-color: #26d7b8;
+  color: white;
+  width: 100%;
+  height: 100vh;
+}
+
+/* line 27, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/sessions.scss */
+.signup {
+  padding-left: 1em;
+  color: white;
+}
+
+/* line 5, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.button1 {
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  display: inline-block;
+  border-radius: 8px;
+  border: none;
+  height: 100px;
+  width: 500px;
+  position: absolute;
+  top: 250px;
+  left: 100px;
+}
+
+/* line 21, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.button2 {
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  display: inline-block;
+  border-radius: 8px;
+  border: none;
+  width: 500px;
+  height: 100px;
+  position: absolute;
+  top: 250px;
+  left: 650px;
+}
+
+/* line 35, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.button3 {
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  display: inline-block;
+  border-radius: 8px;
+  border: none;
+  width: 500px;
+  height: 100px;
+  position: absolute;
+  top: 400px;
+  left: 100px;
+}
+
+/* line 49, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.button4 {
+  background-color: lightblue;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+  display: inline-block;
+  border-radius: 8px;
+  border: none;
+  width: 500px;
+  position: absolute;
+  top: 400px;
+  height: 100px;
+  left: 650px;
+}
+
+/* line 64, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.button1:hover {
+  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* line 68, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.button2:hover {
+  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* line 72, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.button3:hover {
+  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* line 76, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.button4:hover {
+  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* line 79, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/welcome.scss */
+.textfield {
+  position: absolute;
+  top: 0px;
+  left: 815px;
+  padding: 20px 20px;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+/* line 1, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/users.scss */
+.text-header {
+  text-align: center;
+  padding: 1em;
+}
+
+/* line 6, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/users.scss */
+.text {
+  display: inline-block;
+  text-align: left;
+  width: 25%;
+}
+
+/* line 12, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/users.scss */
+.user-wrap {
+  background-color: #26d7b8;
+  color: white;
+  width: 100%;
+  height: 100vh;
+}
+
+/* line 19, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/users.scss */
+.login {
+  padding-left: 1em;
+  color: white;
+}
+
+/* line 27, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/application.scss */
 body {
   font-family: 'Didact Gothic', sans-serif !important;
+}
+
+/* line 31, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 35, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.atop {
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+/* line 43, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.center {
+  text-align: center;
+}
+
+/* line 47, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 !important;
+}
+
+/* line 54, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.group-panel {
+  background-color: #26d7b8;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding-top: 10px;
+  overflow-y: scroll;
+}
+
+/* line 64, /Users/Lynn/Documents/HackDavis17/app/assets/stylesheets/application.scss */
+.main-panel {
+  background-color: white;
+  color: black;
+  width: 100% !important;
+  height: 100vh;
+  padding-left: 8%;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 auto;
+          flex: 3 1 auto;
+  padding-top: 10px;
 }

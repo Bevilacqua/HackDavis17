@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_filter :authorize
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: %i(show edit update destroy)
 
   # GET /items
   # GET /items.json
@@ -63,13 +63,14 @@ class ItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def item_params
-      params.require(:item).permit(:id, :body, :title, :image_url, :group_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def item_params
+    params.require(:item).permit(:id, :body, :title, :image_url, :group_id)
+  end
 end

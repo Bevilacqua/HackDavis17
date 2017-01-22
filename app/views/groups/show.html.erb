@@ -35,11 +35,11 @@
 		</div>
 
 		<h3>Chat</h3>
-		<%= react_component('ChatRoom', 
+		<%= react_component('ChatRoom',
 			group_path: group_path,
 			items_path: items_path,
 			group_id: @group.id,
-			user: current_user) 
+			user: current_user)
 		%>
 		<br />
 		<br />
@@ -57,6 +57,6 @@
 			<%= f.hidden_field :group_id, :value => @group.id %>
 
 			<%= f.submit %>
-		<% end %>	
+		<% end %>
 	</div>
 </div>

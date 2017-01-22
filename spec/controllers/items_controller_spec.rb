@@ -19,7 +19,6 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe ItemsController, type: :controller do
-
   # This should return the minimal set of attributes required to create a valid
   # Item. As you add validations to Item, be sure to
   # adjust the attributes here as well.
@@ -155,5 +154,4 @@ RSpec.describe ItemsController, type: :controller do
       expect(response).to redirect_to(items_url)
     end
   end
-
 end

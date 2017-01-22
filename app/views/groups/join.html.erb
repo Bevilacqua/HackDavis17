@@ -1,9 +1,13 @@
 <div class="invitation">
+  <header>
   <h2 class="center">You have been invited!</h2>
+  </header>
+  <body>
   <h4 class="center"><em>You're so special :)</em></h4>
   <br />
   <br />
   <div class="center">
-  	<%= button_to "Join the group!", create_membership_path(group_id: @group.id) %>
+  	<%= button_to "Join the group!", create_membership_path(group_id: @group.id), class: "btn btn-secondary"%>
   </div>
+  </body>
 </div>
