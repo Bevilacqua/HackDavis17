@@ -108,9 +108,11 @@ var ChatRoom = React.createClass({
                 <div className="chat-box">
                 {this.state.items.map(createItem)}
                 </div>
-                <div id="messageBar">
-                    <input type="text" className="form-control" id="message_bar_input" placeholder="Hello World" onChange={this.handleMessageChange} value={this.state.message_val} onKeyPress={this.handleKeyPress}></input>
-                    <button className="btn btn-primary" id="message_bar_button" onClick={this.handleSend}>Send</button>
+                <div className="input-group">
+                    <input type="text" className="form-control" id="message_bar_input" placeholder="Enter text here." onChange={this.handleMessageChange} value={this.state.message_val} onKeyPress={this.handleKeyPress}></input>
+                    <span className="input-group-btn">
+                      <button className="btn btn-secondary format-button" id="message_bar_button" onClick={this.handleSend}>Send</button>
+                    </span>
                 </div>
             </div>
 		  );
