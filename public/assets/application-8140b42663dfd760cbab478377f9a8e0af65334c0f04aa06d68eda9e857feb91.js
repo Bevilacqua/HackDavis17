@@ -33304,11 +33304,11 @@ var ChatRoom = React.createClass({
     fetchItems: function () {
         var _this = this;
 
-        $.getJSON(this.props.items_path + ".json", function (data) {
+        $.getJSON(this.props.items_path + ".json", {
+            group_path: this.props.group_id
+        }, function (data) {
             return _this.setState({ items: data });
-        }).done((function () {
-            alert("update");
-        }).bind(this));
+        }).done((function () {}).bind(this));
     },
 
     // HANDLE
@@ -33374,6 +33374,89 @@ var ChatRoom = React.createClass({
             )
         );
     }
+
+});
+var ChatUsers = React.createClass({
+  displayName: "ChatUsers",
+
+  propTypes: {
+    user_path: React.PropTypes.string, // Path to get the group messages JSON
+    group_id: React.PropTypes.number },
+
+  // ID of group
+  // WORKFLOW
+
+  componentDidMount: function () {
+    this.mountProcess();
+  },
+
+  mountProcess: function () {
+    this.fetchUsers();
+    setInterval(this.fetchUsers, 500);
+  },
+
+  componentWillUnmount: function () {
+    clearInterval(this.setPolling);
+  },
+
+  // FETCH
+
+  fetchUsers: function () {
+    var _this = this;
+
+    $.getJSON(this.props.user_path + ".json", {
+      group_path: this.props.group_id
+    }, function (data) {
+      return _this.setState({ users: data });
+    }).done((function () {}).bind(this));
+  },
+
+  // HANDLE
+
+  // STATE
+
+  getInitialState: function () {
+    return {
+      setPolling: '',
+      users: []
+    };
+  },
+
+  // RENDER
+
+  render: function () {
+
+    if (!this.state.users || this.state.users == undefined) {
+      return React.createElement(
+        "div",
+        { className: "tags" },
+        React.createElement(
+          "p",
+          null,
+          "loading"
+        )
+      );
+    }
+
+    var createTag = function (user) {
+      return React.createElement(
+        "li",
+        null,
+        React.createElement(
+          "p",
+          { className: "tag" },
+          user.first_name,
+          " ",
+          user.last_name
+        )
+      );
+    };
+    return React.createElement(
+      "div",
+      { className: "tags" },
+      this.state.users.map(createTag)
+    );
+  }
 
 });
 (function() {

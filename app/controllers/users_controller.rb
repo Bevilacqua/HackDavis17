@@ -4,6 +4,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    if params[:group_id]
+      if group = Group.find(params[:group_id])
+        @users = group.users
+      end
+    end
     @users = User.all
   end
 

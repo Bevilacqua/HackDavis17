@@ -25,14 +25,13 @@
 	</div>
 	<div class="main-panel">
 		<h1><%= @group.name %></h1>
-		<p>Invite users: <emp><%= link_to join_url(@group.join_id), join_path(@group.join_id) %></emp></p>
+		<p>Invite members: <emp><%= link_to join_url(@group.join_id), join_path(@group.join_id) %></emp></p>
 
 		<h3>Members</h3>
-		<div class="tags">
-		<% @group.users.each do |user| %>
-		<li><p class="tag" style="background-color: #<%= current_user.color %>"><%= user.email %></p></li>
-		<% end %>
-		</div>
+		<%= react_component('ChatUsers', 
+			user_path: users_path,
+			group_id: @group.id) 
+		%>	
 
 		<h3>Chat</h3>
 		<%= react_component('ChatRoom', 
