@@ -28,7 +28,7 @@ var ChatRoom = React.createClass({
 		$.getJSON(
 			this.props.items_path + ".json",
             {
-                group_path: this.props.group_id,
+                group_id: this.props.group_id,
             },
 			(data) => this.setState({items: data})
 		)

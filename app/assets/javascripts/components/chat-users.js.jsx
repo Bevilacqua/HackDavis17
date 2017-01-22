@@ -26,7 +26,7 @@ var ChatUsers = React.createClass({
 		$.getJSON(
 			this.props.user_path + ".json",
             {
-                group_path: this.props.group_id,
+                group_id: this.props.group_id,
             },
 			(data) => this.setState({users: data})
 		)

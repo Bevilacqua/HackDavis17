@@ -33305,7 +33305,7 @@ var ChatRoom = React.createClass({
         var _this = this;
 
         $.getJSON(this.props.items_path + ".json", {
-            group_path: this.props.group_id
+            group_id: this.props.group_id
         }, function (data) {
             return _this.setState({ items: data });
         }).done((function () {}).bind(this));
@@ -33419,7 +33419,7 @@ var ChatUsers = React.createClass({
     var _this = this;
 
     $.getJSON(this.props.user_path + ".json", {
-      group_path: this.props.group_id
+      group_id: this.props.group_id
     }, function (data) {
       return _this.setState({ users: data });
     }).done((function () {}).bind(this));
