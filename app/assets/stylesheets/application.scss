@@ -15,10 +15,16 @@
 
 @import "bootstrap";
 
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
 @import "groups";
 @import "memberships";
 @import "sessions";
 @import "welcome";
+
+body {
+  font-family: 'Didact Gothic', sans-serif !important;
+}
 
 .center {
 	text-align: center;
